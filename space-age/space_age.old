@@ -1,0 +1,48 @@
+// Package space returns the age in years based on seconds, and Planets provided
+package space
+
+import "math"
+
+// Age converts the seconds, and planet to age on that planet
+func Age(s float64, p string) float64 {
+	earthYear := 365.25
+	planet := p
+	seconds := s
+	switch planet {
+	case "Mercury":
+		orbitalPeriod := 0.2408467
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+	case "Venus":
+		orbitalPeriod := 0.61519726
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+	case "Earth":
+		orbitalPeriod := 1.0
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+	case "Mars":
+		orbitalPeriod := 1.8808158
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return math.Round(planetAge) planetAge
+	case "Jupiter":
+		orbitalPeriod := 11.862615
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+	case "Saturn":
+		orbitalPeriod := 29.447498
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+	case "Uranus":
+		orbitalPeriod := 84.016846
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+	case "Neptune":
+		orbitalPeriod := 164.79132
+		planetAge := seconds / (orbitalPeriod * earthYear) / 24 / 60 / 60
+		return planetAge
+
+	default:
+		return 0
+	}
+}
