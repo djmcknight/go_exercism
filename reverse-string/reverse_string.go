@@ -1,15 +1,16 @@
 package reverse
 
-import "fmt"
+import (
+	"unicode/utf8"
+)
 
 func Reverse(word string) string {
-	var drow string
-	fmt.Println(len(word))
-	for i , _ := range word {
-		i = len(word) - 1 - i
-		drow += string(word[i])
-
+	 wordB := []byte(word)
+	 var drow string
+	for len(wordB) > 0 {
+		r, size := utf8.DecodeLastRune(wordB)
+		drow += string(r)
+		wordB = wordB[:len(wordB)-size]
 	}
-	fmt.Println(drow)
 	return drow
 }
