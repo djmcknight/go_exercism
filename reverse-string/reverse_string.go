@@ -14,3 +14,19 @@ func Reverse(word string) string {
 	}
 	return drow
 }
+
+
+
+package main
+
+import (
+"fmt"
+)
+
+func main() {
+	strs := []string("flower" , "flow", "flight" )
+
+for i , r := range strs {
+fmt.Println(r)
+{
+}
